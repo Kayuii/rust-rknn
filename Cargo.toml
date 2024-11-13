@@ -1,0 +1,20 @@
+[workspace]
+members = ["rknpu2-sys", "rknnlite-toolkit2"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+rknpu2-sys = { path = "./rknpu2-sys" }
+bindgen = "0.70.1"
+candle = { package = "candle-core", git = "https://github.com/huggingface/candle.git" }
+clap = { version = "4.5.18", features = ["derive"] }
+anyhow = "1.0.89"
+reqwest = { version = "0.12.7", features = ["blocking"] }
+runtime-fmt = "0.4.1"
+image = { version = "0.25.2", default-features = false, features = [
+    "jpeg",
+    "png",
+] }
